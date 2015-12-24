@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myAPP">
+  <head>
+    <meta charset="utf-8">
+    <title>fake douban</title>
+    <script type="text/javascript" src="javascripts/angular.min.js"></script>
+    <script type="text/javascript" src="javascripts/underscore.min.js"></script>
+    <script type="text/javascript" src="javascripts/data.js"></script>
+    <script type="text/javascript" src="javascripts/app.js"></script>
+    <link rel="stylesheet" href="css/app.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body class ="book" ng-controller="mainController">
+     <div class='search'>
+            <input id='search-content'/><button id='search-btn'>search</button> 
+      </div>
+      <h1>关于小说的书 (豆瓣)</h1>
+
+      按出版社过滤
+      <select name="book-publisher" ng-model="publisher" ng-change="choosePublisher(publisher)">
+      <option value="{{publisher}}" ng-repeat="publisher in publishers track by $index">{{publisher}}</option>
+    </select>
+      按标签过滤
+      <select name="book-tags" ng-model = "tag" ng-change="chooseTag(tag)">
+         <option value="{{tag}}" ng-repeat="tag in tags track by $index">{{tag}}</option>
+     </select>
+      <ul class="book-list">
+        <li ng-repeat="book in books">
+            <div class="book-img-part">
+              <img src="{{book.images.small}}" alt="{{book.title}}" />
+            </div>
+            <div class="book-description-part">
+              <h3>{{book.title}}</h3>
+              <p class="authors"><span class="author" ng-repeat="author in book.author">{{author}}</span></p>
+              <p class="price"><span>{{book.price}}</span>起</p>
+              <p class="tags"><span class=tag ng-repeat="tag in book.tags">{{tag.name}}</span></p>
+            </div>
+        </li>
+      </ul> 
+  </body>
+</html>

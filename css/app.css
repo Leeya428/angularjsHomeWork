@@ -1,0 +1,70 @@
+body{
+	font-size: 14px;
+	color: #000;
+	margin: 0;
+	padding: 0;
+}
+
+body h1 {
+	word-wrap: break-word;
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+    color: #494949;
+    margin: 0;
+    padding: 0 0 15px 0;
+    line-height: 1.1;
+}
+
+body h4 {
+	margin: 0;
+	font-size: 16px;
+	color: #37a;
+
+}
+
+body p {
+	margin-bottom: 10px;
+}
+
+body ul {
+	padding: 0;
+	list-style-type: none;
+}
+
+.book .search {
+	margin-bottom: 20px;
+}
+
+.book #search-content {
+	font-size: 16px;
+	line-height: 34px;
+    width: 70%;
+}
+
+.book #search-btn {
+	line-height: 34px;
+    border: none;
+    background-color: #27a;
+    color: #fff;
+    width: 50px;
+    margin-left: -50px;
+    vertical-align: top;
+}
+
+.book{
+	margin: 20px 500px 20px 180px;
+}
+
+.book ul li {
+	border-top: 1px dashed #E8E8E8;
+	padding: 10px 0; 
+	position: relative;
+	min-height: 96px;
+}
+.book img{
+	position: absolute;
+}
+.book .book-description-part{
+	margin-left: 100px;
+}
