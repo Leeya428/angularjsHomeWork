@@ -5,8 +5,27 @@
   myAPP.controller('mainController', function($scope) {
     $scope.books = data.books;
 
+    //searchBook
+    $scope.searchbook = function(searchContent){
+        var book = [];
+        if(searchContent !=""){
+            for (var i = 0; i < data.books.length; i++) {
+                if(data.books[i].title.indexOf(searchContent)){
+                     book.push(data.books[i]);
+                 }
+             }
+        };
+        if(book !=""){
+            $scope.books = book;
+        }else{
+            $scope.books = "";
+        }
+    }
+       
+
+   //两个下拉菜单数据获取
     var publisher = _.map($scope.books,function(book){
-    	return book.publisher;
+        return book.publisher;
     });
 
     var publisher_all = ["请选择"];
@@ -87,4 +106,6 @@
     $scope.tag = "请选择";
     $scope.publisher = "请选择";
   });
+
+
 })(angular, data, _);

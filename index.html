@@ -11,10 +11,11 @@
   </head>
   <body class ="book" ng-controller="mainController">
      <div class='search'>
-            <input id='search-content'/><button id='search-btn'>search</button> 
+            <input type ="text" id='search-content' ng-model = "searchContent"/>
+            <button id='search-btn' ng-click="searchbook(searchContent)">search</button> 
       </div>
-      <h1>关于小说的书 (豆瓣)</h1>
 
+      <h1>关于小说的书 (豆瓣)</h1>
       按出版社过滤
       <select name="book-publisher" ng-model="publisher" ng-change="choosePublisher(publisher)">
       <option value="{{publisher}}" ng-repeat="publisher in publishers track by $index">{{publisher}}</option>
